@@ -1,13 +1,49 @@
+import "./track.css";
+import primaryBtn from "../../assets/play-track.svg";
+
+/* Outline of HTML Structure
+
+<div class="track">
+  <img class="track__image" src="../image.png" />
+  <h3 class="track__title">Billie Jean</h3>
+  <p class="track__artist">Michael Jackson</p>
+  <button>
+    <img src="../play-track.svg" />
+  </button>
+</div>
+
+*/
+
 export function createTrackElement() {
-  const divElement = document.createElement("div"); // creates a <div></div>
+  const title = "Billie Jean";
+  const artist = "Michael Jackson";
 
-  const h3Element = document.createElement("h3"); // creates a <h3></h3>
-  h3Element.innerText = "Billie Jean"; // <h3>Billie Jean</h3>
+  const trackComponent = document.createElement("div"); // creates a <div></div>
+  trackComponent.className = "track";
 
-  const h4Element = document.createElement("h4"); // creates a <h4></h4>
-  h4Element.innerText = "Michael Jackson"; // <h4>Michael Jackson</h4>
+  const titleElement = document.createElement("h3"); // creates a <h3></h3>
+  titleElement.innerText = "Billie Jean"; // <h3>Billie Jean</h3>
 
-  divElement.append(h3Element); // inserts the h3 Element into the div
-  divElement.append(h4Element); // inserts the h4 Element into the div
-  return divElement;
+  const artistElement = document.createElement("p"); // creates a <p></p>
+  artistElement.innerText = "Michael Jackson"; // <p>Michael Jackson</p>
+
+  const descriptionElement = document.createElement("div");
+  descriptionElement.className = "track__description";
+  descriptionElement.append(titleElement, artistElement);
+
+  const titleImage = document.createElement("img");
+  titleImage.src =
+    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.e73ZzgeVfHsS-kcyVn5ZSQHaMp%26pid%3DApi&f=1";
+  titleImage.alt = `Image of ${artist}`;
+  titleImage.className = "track__image";
+
+  const buttonElement = document.createElement("button");
+  const trackPrimaryBtn = document.createElement("img");
+  trackPrimaryBtn.src = primaryBtn;
+  trackPrimaryBtn.onclick = function () {
+    alert("Click !!!");
+  };
+
+  trackComponent.append(titleImage, descriptionElement, trackPrimaryBtn);
+  return trackComponent;
 }
