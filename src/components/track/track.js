@@ -14,24 +14,23 @@ import imgSrc from "../../assets/play-track.svg";
 
 */
 
-export function createTrackElement(title, artist) {
+export function createTrackElement(track) {
   const trackComponent = document.createElement("div"); // creates a <div></div>
   trackComponent.className = "track";
 
   const titleElement = document.createElement("h3"); // creates a <h3></h3>
-  titleElement.innerText = title; // <h3>Billie Jean</h3>
+  titleElement.innerText = track.title; // <h3>Billie Jean</h3>
 
   const artistElement = document.createElement("p"); // creates a <p></p>
-  artistElement.innerText = artist; // <p>Michael Jackson</p>
+  artistElement.innerText = track.artist; // <p>Michael Jackson</p>
 
   const descriptionElement = document.createElement("div");
   descriptionElement.className = "track__description";
   descriptionElement.append(titleElement, artistElement);
 
   const titleImage = document.createElement("img");
-  titleImage.src =
-    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.e73ZzgeVfHsS-kcyVn5ZSQHaMp%26pid%3DApi&f=1";
-  titleImage.alt = `Image of ${artist}`;
+  titleImage.src = track.imgSrc;
+  titleImage.alt = `Image of ${track.artist}`;
   titleImage.className = "track__image";
 
   const primaryBtn = document.createElement("button");
@@ -39,10 +38,10 @@ export function createTrackElement(title, artist) {
   const primaryBtnImage = document.createElement("img");
   primaryBtnImage.src = imgSrc;
   primaryBtn.append(primaryBtnImage);
-  primaryBtn.onclick = function () {
-    alert("Click !!!");
-  };
-
   trackComponent.append(titleImage, descriptionElement, primaryBtn);
+  const audioElement = new Audio(track.audioSrc);
+  primaryBtn.onclick = function () {
+    audioElement.play();
+  };
   return trackComponent;
 }

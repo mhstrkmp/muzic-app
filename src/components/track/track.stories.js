@@ -6,7 +6,11 @@ export default {
 };
 
 export const songOne = () =>
-  createTrackElement("Billie Jean", "Michael Jackson");
-export const songTwo = () => createTrackElement("Thriller", "Michael Jackson");
-export const songThree = () =>
-  createTrackElement("Black or White", "Michael Jackson");
+  createTrackElement({
+    title: "8bitDetective",
+    artist: "Bass Assassin",
+    imgSrc:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/images/albums/IllocanbloBass_Assassin_-_Peony_Lantern_Split_EP_-_2011060485057279.jpg?method=crop&width=290&height=290",
+    audioSrc:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Progolog/Bass_Assassin/Peony_Lantern_Split_EP/Bass_Assassin_-_02_-_8bitDetective.mp3",
+  });
