@@ -7,6 +7,16 @@ export default {
 
 export const songOne = () =>
   createTrackElement({
+    title: "Websiiite feat Dragan",
+    artist: "Tracky Birthday",
+    imgSrc:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/images/artists/Tracky_Birthday_-_2009113015813089.jpg?width=290&height=290",
+    audioSrc:
+      "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Ego_Twister/Tracky_Birthday/Greatest_It_va_2010/Tracky_Birthday_-_05_-_Websiiite_feat_Dragan.mp3",
+  });
+
+export const songTwo = () =>
+  createTrackElement({
     title: "8bitDetective",
     artist: "Bass Assassin",
     imgSrc:

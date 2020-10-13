@@ -4,7 +4,8 @@
   --main-font-color: #d7d8db;
   --main-background-color: #151827;
   --font-family: "Circular Std", sans-serif;
-  --title-font-color: grey;
+  --title-font-color: rgb(163, 164, 171);
+  --foot-note-font-color: rgb(88, 90, 103);
 }
 
 *,
