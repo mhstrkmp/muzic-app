@@ -1,5 +1,5 @@
 import "./track.css";
-import primaryBtn from "../../assets/play-track.svg";
+import imgSrc from "../../assets/play-track.svg";
 
 /* Outline of HTML Structure
 
@@ -14,18 +14,15 @@ import primaryBtn from "../../assets/play-track.svg";
 
 */
 
-export function createTrackElement() {
-  const title = "Billie Jean";
-  const artist = "Michael Jackson";
-
+export function createTrackElement(title, artist) {
   const trackComponent = document.createElement("div"); // creates a <div></div>
   trackComponent.className = "track";
 
   const titleElement = document.createElement("h3"); // creates a <h3></h3>
-  titleElement.innerText = "Billie Jean"; // <h3>Billie Jean</h3>
+  titleElement.innerText = title; // <h3>Billie Jean</h3>
 
   const artistElement = document.createElement("p"); // creates a <p></p>
-  artistElement.innerText = "Michael Jackson"; // <p>Michael Jackson</p>
+  artistElement.innerText = artist; // <p>Michael Jackson</p>
 
   const descriptionElement = document.createElement("div");
   descriptionElement.className = "track__description";
@@ -37,13 +34,15 @@ export function createTrackElement() {
   titleImage.alt = `Image of ${artist}`;
   titleImage.className = "track__image";
 
-  const buttonElement = document.createElement("button");
-  const trackPrimaryBtn = document.createElement("img");
-  trackPrimaryBtn.src = primaryBtn;
-  trackPrimaryBtn.onclick = function () {
+  const primaryBtn = document.createElement("button");
+  primaryBtn.className = "track__button";
+  const primaryBtnImage = document.createElement("img");
+  primaryBtnImage.src = imgSrc;
+  primaryBtn.append(primaryBtnImage);
+  primaryBtn.onclick = function () {
     alert("Click !!!");
   };
 
-  trackComponent.append(titleImage, descriptionElement, trackPrimaryBtn);
+  trackComponent.append(titleImage, descriptionElement, primaryBtn);
   return trackComponent;
 }
