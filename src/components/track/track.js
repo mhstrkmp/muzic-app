@@ -30,44 +30,28 @@ export function createTrackElement(track) {
   trackComponent.append(titleImage, descriptionElement, primaryBtn);
   const audioElement = new Audio(track.audioSrc);
 
-  /* Player function to play and pause onclick */
-
-  /*
-  primaryBtn.onclick = function () {
-    if (isPlaying) {
-      audioElement.pause();
-      primaryBtnImage.src = imgPlaySrc;
-      primaryBtnImage.alt = "Play Button";
-    } else {
-      audioElement.play();
-      primaryBtnImage.src = imgPauseSrc;
-      primaryBtnImage.alt = "Pause Button";
-    }
-    isPlaying = !isPlaying;
-  }; */
-
   let isPlaying = false;
 
-  let playSong = () => {
-    audioElement.pause();
-    primaryBtnImage.src = imgPlaySrc;
-    primaryBtnImage.alt = "Play Button";
-  };
-
-  let pauseSong = () => {
-    audioElement.play();
-    primaryBtnImage.src = imgPauseSrc;
-    primaryBtnImage.alt = "Pause Button";
-  };
-
   primaryBtn.onclick = function () {
     if (isPlaying) {
-      pauseSong();
+      pauseSong(primaryBtnImage);
+      audioElement.play();
     } else {
-      playSong();
+      playSong(primaryBtnImage);
+      audioElement.pause();
     }
     isPlaying = !isPlaying;
   };
 
   return trackComponent;
 }
+
+const playSong = (element) => {
+  element.src = imgPlaySrc;
+  element.alt = "Play Button";
+};
+
+const pauseSong = (element) => {
+  element.src = imgPauseSrc;
+  element.alt = "Pause Button";
+};
