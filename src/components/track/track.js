@@ -32,7 +32,7 @@ export function createTrackElement(track) {
 
   /* Player function to play and pause onclick */
 
-  let isPlaying = false;
+  /*
   primaryBtn.onclick = function () {
     if (isPlaying) {
       audioElement.pause();
@@ -44,6 +44,30 @@ export function createTrackElement(track) {
       primaryBtnImage.alt = "Pause Button";
     }
     isPlaying = !isPlaying;
+  }; */
+
+  let isPlaying = false;
+
+  let playSong = () => {
+    audioElement.pause();
+    primaryBtnImage.src = imgPlaySrc;
+    primaryBtnImage.alt = "Play Button";
   };
+
+  let pauseSong = () => {
+    audioElement.play();
+    primaryBtnImage.src = imgPauseSrc;
+    primaryBtnImage.alt = "Pause Button";
+  };
+
+  primaryBtn.onclick = function () {
+    if (isPlaying) {
+      pauseSong();
+    } else {
+      playSong();
+    }
+    isPlaying = !isPlaying;
+  };
+
   return trackComponent;
 }
