@@ -38,12 +38,10 @@ export function createTrackElement(track) {
       audioElement.pause();
       primaryBtnImage.src = imgPlaySrc;
       primaryBtnImage.alt = "Play Button";
-      console.log("It's pausing");
     } else {
       audioElement.play();
       primaryBtnImage.src = imgPauseSrc;
       primaryBtnImage.alt = "Pause Button";
-      console.log("It's playing");
     }
     isPlaying = !isPlaying;
   };
