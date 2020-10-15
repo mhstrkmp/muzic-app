@@ -1,6 +1,7 @@
 import "./track.css";
 import imgPlaySrc from "../../assets/play-track.svg";
 import imgPauseSrc from "../../assets/pause-track.svg";
+import { createElement } from "../../utils/elements";
 
 export function createTrackElement(track) {
   const trackElement = createElement("div", {
