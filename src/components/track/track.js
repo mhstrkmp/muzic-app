@@ -3,6 +3,13 @@ import imgPlaySrc from "../../assets/play-track.svg";
 import imgPauseSrc from "../../assets/pause-track.svg";
 
 export function createTrackElement(track) {
+  const trackElement = createElement("div", {
+    className: "track",
+    innerText: "Replace Me!",
+  });
+  return trackElement;
+
+  /*
   const trackComponent = document.createElement("div");
   trackComponent.className = "track";
 
@@ -30,7 +37,7 @@ export function createTrackElement(track) {
   trackComponent.append(titleImage, descriptionElement, primaryBtn);
   const audioElement = new Audio(track.audioSrc);
 
-  let isPlaying = false;
+  let isPlaying = false; // not needed because audioElement.paused
 
   primaryBtn.onclick = function () {
     if (isPlaying) {
@@ -44,6 +51,7 @@ export function createTrackElement(track) {
   };
 
   return trackComponent;
+*/
 }
 
 const playSong = (element) => {
