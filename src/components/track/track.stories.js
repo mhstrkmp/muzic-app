@@ -24,13 +24,12 @@ let songs = [
   },
 ];
 
-export const playList = () => {
+// next part should be solved with foreach
+export const playlist = () => {
   const container = document.createElement("div");
-
   for (let i = 0; i < songs.length; i++) {
     let song = createTrackElement(songs[i]);
     container.append(song);
   }
-
   return container;
 };
